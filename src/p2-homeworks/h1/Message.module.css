@@ -1,0 +1,64 @@
+.dimensionsOfMessageCloud{
+    display: flex;
+    width: 215px;
+    height: 50px;
+    border-radius: 14px 14px 14px 0px;
+    position: relative;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+
+
+}
+.message{
+    position: absolute;
+    top:25px;
+    left: 10px;
+}
+.time{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+.ss{
+
+    bottom: 0;
+    right: 0;
+}
+.avatar img{
+    width: 20px;
+    border-radius: 20px;
+    position: absolute;
+    margin: 32px 0px 0px 0px;
+}
+
+.locationOfMessageCloud{
+    display: flex;
+    top:0px;
+    left: 10px;
+    margin: 5px 0px 0px 30px;
+}
+
+
+
+.name{
+    color: blueviolet;
+    left: 11px;
+    top: 5px;
+    position: absolute;
+    font-weight: 500;
+}
+.triangle{
+    content: '';
+    width: 0;
+    height: 0;
+    border-bottom: 12px solid rgba(0,0,0,0.2);
+    border-left: 12px solid transparent;
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    top: 104px;
+    left: 18px;
+}

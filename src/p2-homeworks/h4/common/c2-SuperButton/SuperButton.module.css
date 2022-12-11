@@ -1,0 +1,18 @@
+.default {
+    display: inline-block;
+    padding: 5px 10px;
+    overflow: hidden;
+    background: transparent;
+    color: #2196f3;
+    border: none;
+    transition: 0.2s;
+}
+.default:hover{
+    background: #2196f3;
+    box-shadow: 0 0 10px #2196f3,0 0 40px #2196f3,0 0 40px #2196f3;
+    color: #255784;
+}
+
+.red {
+    background: blue;
+}
