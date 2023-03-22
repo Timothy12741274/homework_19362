@@ -1,22 +1,35 @@
-import React from 'react'
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import Slider from '@mui/material/Slider';
 
-type SuperDoubleRangePropsType = {
-    onChangeRange?: (value: [number, number]) => void
-    value?: [number, number]
-    // min, max, step, disable, ...
+
+
+function valuetext(value: number) {
+    return `${value}`;
 }
 
-const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
-    {
-        onChangeRange, value,
-        // min, max, step, disable, ...
-    }
-) => {
-    // сделать самому, можно подключать библиотеки
+type PropsType = {
+    //maxV: number
+    min:number
+    max:number
+    onChange:(e:any, nv:any)=>void
+    marks: Array<any>
+}
 
+const SliderM = ({onChange, marks, min, max}:PropsType) => {
     return (
-        <input type="range"/>
-    )
+        <Slider
+            onChangeCommitted={onChange}
+            sx={{width:220}}
+            track="inverted"
+            aria-labelledby=""
+            getAriaValueText={valuetext}
+            defaultValue={[min, max]}
+            marks={marks}
+        />
+    );
 }
 
-export default SuperDoubleRange
+export default SliderM

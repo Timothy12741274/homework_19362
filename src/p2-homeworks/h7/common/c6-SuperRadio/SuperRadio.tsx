@@ -1,4 +1,5 @@
 import React, {ChangeEvent, InputHTMLAttributes, DetailedHTMLProps} from 'react'
+import {FormControlLabel, Radio, RadioGroup} from "@mui/material";
 
 type DefaultRadioPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
@@ -17,23 +18,37 @@ const SuperRadio: React.FC<SuperRadioPropsType> = (
 ) => {
     const onChangeCallback = (e: ChangeEvent<HTMLInputElement>) => {
         // onChange, onChangeOption
+        if (onChange) onChange(e)
+        if (onChangeOption) onChangeOption(e.currentTarget.value)
     }
 
 
     const mappedOptions: any[] = options ? options.map((o, i) => (
-        <label key={name + '-' + i}>
+
+                <FormControlLabel value={o} control={<Radio />} label={o} />
+
+        /*<label key={name + '-' + i}>
+
             <input
                 type={'radio'}
                 // name, checked, value, onChange
+                name={name}
+                checked={restProps.checked}
+                value={value}
+                onChange={onChange}
             />
             {o}
-        </label>
+        </label>*/
     )) : []
 
     return (
-        <>
+        <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            defaultValue={mappedOptions[0].value}
+            name="radio-buttons-group"
+        >
             {mappedOptions}
-        </>
+        </RadioGroup>
     )
 }
 
