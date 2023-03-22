@@ -7,13 +7,12 @@ function HW5() {
     return (
         <div>
             {/*в gh-pages лучше работает HashRouter*/}
-            <HashRouter>
+
 
             <Header/>
 
             <ROutes/>
 
-            </HashRouter>
         </div>
     )
 }
