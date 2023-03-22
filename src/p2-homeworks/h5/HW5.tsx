@@ -8,11 +8,10 @@ function HW5() {
         <div>
             {/*в gh-pages лучше работает HashRouter*/}
 
-
-            <Header/>
-
-            <ROutes/>
-
+            <HashRouter basename={'/homework_19362'}>
+                <Header/>
+                <ROutes/>
+            </HashRouter>
         </div>
     )
 }
